@@ -11,6 +11,7 @@ def load_library(path)
     emoji_hash["get_emoticon"][emojis[0]] = emojis[1]
   end
   emoji_hash
+  binding.pry
   end
 
 def get_japanese_emoticon(path, emoticon)
