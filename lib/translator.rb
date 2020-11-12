@@ -9,7 +9,6 @@ def load_library(path)
   emoji.each do |japanese, english|
     emoji_hash["get_meaning"][emojis[1]] = japanese
     emoji_hash["get_emoticon"][emojis[0]] = english[1]
-    binding.pry
   end
   emoji_hash
 end
