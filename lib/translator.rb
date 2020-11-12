@@ -13,6 +13,7 @@ def load_library(path)
   end
 
 def get_japanese_emoticon(path, emoticon)
+  japanese = []
   emoji = load_library(path)
   emoji.each do |key, value|
     return emoji[key][:english] if emoji[key][:japanese] == emoticon
