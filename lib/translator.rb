@@ -7,8 +7,8 @@ def load_library(path)
   emoji_hash["japanese"] = {}
   emoji = YAML.load_file(path)
   emoji.each do |word, emojis|
-    emoji_hash["get_meaning"][emojis[1]] = word
-    emoji_hash["get_emoticon"][emojis[0]] = emojis[1]
+    emoji_hash["english"][emojis[1]] = word
+    emoji_hash["japanese"][emojis[0]] = emojis[1]
     binding.pry
   end
   emoji_hash
