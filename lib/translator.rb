@@ -29,12 +29,16 @@ def get_japanese_emoticon(path, emoticon)
     english = nil
     emoji = load_library(path)
     emoji.each do |key, value|
-      rjapanese = key if emoji[key][:japanese] == emoticon
+      english = key if emoji[key][:japanese] == emoticon
     end
-
+    if english
+      return enlgish
+    else
+      return "Sorry, that emoticon was not found"
+    end
+    end
     # if emoji[:english].has_key?(emoticon)
     #   emoji[:english][emoticon]
     # else
     #   return "Sorry, that emoticon was not found"
     # end
-end
