@@ -26,6 +26,7 @@ def get_japanese_emoticon(path, emoticon)
   end
 
   def get_english_meaning(path, emoticon)
+    english = nil
     emoji = load_library(path)
     emoji.each do |key, value|
       return key if emoji[key][:japanese] == emoticon
