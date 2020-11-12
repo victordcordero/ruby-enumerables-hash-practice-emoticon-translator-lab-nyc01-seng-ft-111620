@@ -18,6 +18,9 @@ def get_japanese_emoticon(path, emoticon)
   emoji.each do |key, value|
     japanese = emoji[key][:english] if emoji[key][:japanese] == emoticon
   end
+  if japanese
+    return japanese
+  else "Sorry, that emoticon was not found"
   end
 
   def get_english_meaning(path, emoticon)
