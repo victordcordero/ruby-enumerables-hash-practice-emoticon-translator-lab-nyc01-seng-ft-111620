@@ -4,7 +4,7 @@ require "pry"
 def load_library(path)
   emoji_hash = {}
   emoji_hash["get_meaning"] = {}
-  emoji_hash["japanese"] = {}
+  emoji_hash["get_emoticon"] = {}
   emoji = YAML.load_file(path)
   emoji.each do |word, emojis|
       binding.pry
