@@ -14,6 +14,7 @@ def load_library(path)
 
 def get_japanese_emoticon(path, emoticon)
   emoji = load_library(path)
+  binding.pry
   if emoji[:japanese].has_key?(emoticon)
     emoji[:japanese][emoticon]
   else
