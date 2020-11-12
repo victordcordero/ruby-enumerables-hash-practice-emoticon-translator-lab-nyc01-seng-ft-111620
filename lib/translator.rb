@@ -16,7 +16,7 @@ def load_library(path)
 
 def get_japanese_emoticon(path, emoticon)
   emoji = load_library(path)
-  if emoji[:japanese].has_key?(emoticon)
+  if emoji[:english].has_key?(emoticon)
     emoji[:japanese][emoticon]
   else
     return "Sorry, that emoticon was not found"
@@ -25,7 +25,7 @@ def get_japanese_emoticon(path, emoticon)
 
   def get_english_meaning(path, emoticon)
     emoji = load_library(path)
-    if emoji[:english].has_key?(emoticon)
+    if emoji[:japanese].has_key?(emoticon)
       emoji[:english][emoticon]
     else
       return "Sorry, that emoticon was not found"
