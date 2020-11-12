@@ -3,12 +3,12 @@ require "pry"
 
 def load_library(path)
   emoji_hash = {}
-  emoji_hash["enlgish"] = {}
+  emoji_hash["get_meaning"] = {}
   emoji_hash["japanese"] = {}
   emoji = YAML.load_file(path)
   emoji.each do |word, emojis|
       binding.pry
-    emoji_hash["english"][emojis[1]] = word
+    emoji_hash["get_meaning"][emojis[1]] = word
     emoji_hash["japanese"][emojis[0]] = emojis[1]
   binding.pry
   end
