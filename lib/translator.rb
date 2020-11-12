@@ -9,7 +9,7 @@ def load_library(path)
   emoji.each do |word, emojis|
       binding.pry
     emoji_hash["get_meaning"][emojis[1]] = word
-    emoji_hash["japanese"][emojis[0]] = emojis[1]
+    emoji_hash["get_emoticon"][emojis[0]] = emojis[1]
   binding.pry
   end
   emoji_hash
