@@ -20,7 +20,8 @@ def get_japanese_emoticon(path, emoticon)
   end
   if japanese
     return japanese
-  else "Sorry, that emoticon was not found"
+  else 
+    return "Sorry, that emoticon was not found"
   end
 
   def get_english_meaning(path, emoticon)
