@@ -1,19 +1,40 @@
 require "yaml"
 require "pry"
 
-def load_library(library)
-  new_hash = {
-   "get_meaning" => {},
-   "get_emoticon" => {}
- }
- library.each do |meaning, translation|
-   english = translation[0]
-   japanese = translation[1]
-   new_hash["get_meaning"][japanese] = meaning
-   new_hash["get_emoticon"][english] = japanese
- end
-  return new_hash
-end
+def load_library (file_path)
+
+
+
+  emoticon_dictionary = {}
+  emoticon_dictionary["get_meaning"] = {} #get meaning keys are JP emoji and values are plain text
+  emoticon_dictionary["get_emoticon"] = {} #get emoticon keys are usa emojis and keys are jp emojis
+
+
+  # GET MEANING ==> { JP-EMOJI ==> PLAIN TEXT}
+  # GET EMOTICON ==> { USA-EMOJI ==> JP-EMOJI}
+
+  emoticon_file = YAML.load_file(file_path)
+
+
+  emoticon_file.each do |emoticon_text, emoticon_icons_array|
+
+    # emoticon_icon_array.each_with_index { |item, index|
+    #   if index == 0
+    #       usa = item
+    #   elsif index == 1
+    #       jp = item
+    #   end
+    # }
+
+      usa, jp = emoticon_icons_array
+
+      emoticon_dictionary["get_emoticon"][usa] = jp
+      emoticon_dictionary["get_meaning"][jp] = emoticon_text
+
+     # binding.pry
+    emoticon_dictionary
+  end
+  
 
 def get_japanese_emoticon(path, emoticon)
   emoji = load_library(path)
